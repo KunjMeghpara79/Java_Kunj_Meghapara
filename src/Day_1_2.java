@@ -74,7 +74,7 @@ public class Day_1_2 {
         Book b2 = new Book("48 Laws of power", "Robert Green", "BK1002", false);
 
         Novel n1 = new Novel("The diary of a CEO", "Steven Bartlett", "NV2001", true);
-        Novel n2 = new Novel("The Alchemist", "Paulo Coelho", "NV2002", false);
+        Novel n2 = new Novel("The laws of human nature", "Robert Green", "NV2002", false);
 
 
         list.add(b1);
