@@ -90,6 +90,8 @@ public static void main(String[] args) {
     borrower.displayBorrower();
     borrower.showRole();
 
-
+    System.out.println("\n===== LIBRARIAN DETAILS =====");
+    librarian.displayLibrarian();
+    librarian.showRole();
 }
 }
