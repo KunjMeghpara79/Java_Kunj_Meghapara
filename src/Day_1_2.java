@@ -31,7 +31,7 @@ class Book implements lib_items{
     }
     @Override
     public void ShowDetail() {
-        System.out.println("Book Details are as follow : ");
+        System.out.println("Book Details are as follows : ");
         System.out.println("Book Name      :  "+this.title);
         System.out.println("Author name    :  "+this.author);
         System.out.println("Serial number  :  "+this.sr_no);
@@ -56,7 +56,7 @@ class Novel implements lib_items{
     }
     @Override
     public void ShowDetail() {
-        System.out.println("Novel Details are as follow : ");
+        System.out.println("Novel Details are as follows : ");
         System.out.println("Novel Name      :  "+this.title);
         System.out.println("Author name     :  "+this.author);
         System.out.println("Serial number   :  "+this.sr_no);
@@ -67,6 +67,27 @@ class Novel implements lib_items{
 public class Day_1_2 {
     public static void main(String[] args) {
         List<lib_items> list = new ArrayList<>();
-        Library lib = new Library("Public library",list);
+
+        Library lib = new Library("Public Library", list);
+
+        Book b1 = new Book("Atomic Habits", "James Clear", "BK1001", true);
+        Book b2 = new Book("48 Laws of power", "Robert Green", "BK1002", false);
+
+        Novel n1 = new Novel("The diary of a CEO", "Steven Bartlett", "NV2001", true);
+        Novel n2 = new Novel("The Alchemist", "Paulo Coelho", "NV2002", false);
+
+
+        list.add(b1);
+        list.add(b2);
+        list.add(n1);
+        list.add(n2);
+
+
+        System.out.println("===== Library Items =====\n");
+
+        for (lib_items item : list) {
+            item.ShowDetail();
+            System.out.println("----------------------------");
+        }
     }
 }
