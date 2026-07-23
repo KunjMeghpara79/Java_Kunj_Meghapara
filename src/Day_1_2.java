@@ -1,3 +1,12 @@
+interface user{
+    void showRole();
+}
+
+/*
+Reason to choose interface over abstract class : in the current scenario user, borrower and librarian are having one common implementation which is showRole().
+if they had some common sharing data then we can go for the abstract class since here only one method is being overloaded thats why it is better to use interface.
+ */
+
 class Book{
     private String book_name;
     private String serial_number;
@@ -14,7 +23,7 @@ class Book{
         System.out.println("Author    : " + author);
     }
 }
-class Borrower{
+class Borrower implements user{
     private String name;
     private String contact;
 
@@ -30,8 +39,13 @@ class Borrower{
         System.out.println("Borrower Name : " + name);
         System.out.println("Contact       : " + contact);
     }
+
+    @Override
+    public void showRole() {
+        System.out.println("The role of " + this.name + " is Borrower");
+    }
 }
-class Librarian{
+class Librarian implements user{
     private String name;
     private String contact;
     Librarian(String name,String contact){
@@ -46,32 +60,38 @@ class Librarian{
         System.out.println("Librarian Name : " + name);
         System.out.println("Contact        : " + contact);
     }
-}
-public class Day_1 {
-    public static void main(String[] args) {
-        Book book = new Book(
-                "Java: The Complete Reference",
-                "B001",
-                "......"
-        );
-
-        Borrower borrower = new Borrower(
-                "Kunj Meghapara",
-                "9876543210"
-        );
-
-        Librarian librarian = new Librarian(
-                "Mr. Patel",
-                "9123456789"
-        );
-
-        System.out.println("===== BOOK DETAILS =====");
-        book.displayBook();
-
-        System.out.println("\n===== BORROWER DETAILS =====");
-        borrower.displayBorrower();
-
-        System.out.println("\n===== LIBRARIAN DETAILS =====");
-        librarian.displayLibrarian();
+    @Override
+    public void showRole() {
+        System.out.println("The role of " + this.name + " is Librarian");
     }
+}
+class Day_1_2 {
+public static void main(String[] args) {
+    Book book = new Book(
+            "Java: The Complete Reference",
+            "B001",
+            "......"
+    );
+
+    Borrower borrower = new Borrower(
+            "Kunj Meghapara",
+            "9876543210"
+    );
+
+    Librarian librarian = new Librarian(
+            "Mr. Patel",
+            "9123456789"
+    );
+
+    System.out.println("===== BOOK DETAILS =====");
+    book.displayBook();
+
+    System.out.println("\n===== BORROWER DETAILS =====");
+    borrower.displayBorrower();
+    borrower.showRole();
+
+    System.out.println("\n===== LIBRARIAN DETAILS =====");
+    librarian.displayLibrarian();
+    librarian.showRole();
+}
 }
