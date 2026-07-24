@@ -31,7 +31,7 @@ class Book implements lib_items{
     }
     @Override
     public void ShowDetail() {
-        System.out.println("Book Details are as follows : ");
+        System.out.println("Book Details are as follows...");
         System.out.println("Book Name      :  "+this.title);
         System.out.println("Author name    :  "+this.author);
         System.out.println("Serial number  :  "+this.sr_no);
@@ -56,7 +56,7 @@ class Novel implements lib_items{
     }
     @Override
     public void ShowDetail() {
-        System.out.println("Novel Details are as follows : ");
+        System.out.println("Novel Details are as follows...");
         System.out.println("Novel Name      :  "+this.title);
         System.out.println("Author name     :  "+this.author);
         System.out.println("Serial number   :  "+this.sr_no);
