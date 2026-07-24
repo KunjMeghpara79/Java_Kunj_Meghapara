@@ -37,6 +37,14 @@ class Book implements lib_items{
         System.out.println("Serial number  :  "+this.sr_no);
         System.out.println("Status         :  "+((this.available) ? "Available" : "Not available"));
     }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public String getSr_no() {
+    return this.sr_no;
+    }
 }
 class Novel implements lib_items{
     private String title;
@@ -61,6 +69,14 @@ class Novel implements lib_items{
         System.out.println("Author name     :  "+this.author);
         System.out.println("Serial number   :  "+this.sr_no);
         System.out.println("Status          :  "+((this.available) ? "Available" : "Not available"));
+    }
+
+    public String getSr_no() {
+        return this.sr_no;
+    }
+
+    public String getAuthor() {
+        return this.author;
     }
 }
 
